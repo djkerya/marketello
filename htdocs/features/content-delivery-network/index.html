@@ -1,0 +1,695 @@
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+            <title>Content Delivery Network - BigCommerce Support</title>
+            <script src="/static/111213/js/perf/stub.js" type="text/javascript"></script><script src="/faces/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript?rel=1497475512000" type="text/javascript"></script><script src="/jslibrary/1492663580000/ui-sfdc-javascript-impl/SfdcCore.js" type="text/javascript"></script><script src="/static/111213/js/picklist4.js" type="text/javascript"></script><script src="/jslibrary/1496945620000/sfdc/VFState.js" type="text/javascript"></script><meta content="BigCommerce stores come equipped with a content delivery network to serve your stores files to shoppers as fast as possible." name="description" />
+            <link href="https://support.bigcommerce.com/articles/Public/Content-Delivery-Network" rel="canonical" />
+    <meta content="text/html;charset=utf-8" http-equiv="content-type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="https://support.bigcommerce.com/resource/1495135987000/knowledge_assets/images/bigcommerce-support-logo.jpg" property="og:image" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700" rel="stylesheet" type="text/css" />
+    <link href="/resource/1495135987000/knowledge_assets/dist/styles.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="/resource/1495135987000/knowledge_assets/dist/all.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script type="text/javascript">
+    var $$ = jQuery.noConflict();
+
+    // capture some data from the Apex controller and store in js vars
+    var searchPrompt = "What would you like to know?";
+    var baseURL = "https://support.bigcommerce.com";
+    var currSearch = jQuery.trim("");
+    var currLanguage = jQuery.trim("en_US");
+    var currCategories = jQuery.trim("");
+
+    var contactUs = false;
+    var viewingArticle = true;
+    var pkbHome = "/pkb_Home";
+    var openDialogWhenReady = false;
+
+    // constants pointing to element ids used in the page
+    var NEXT_LINK_ID = 'nextLink';
+    var RSS_RESULTS_LINK_ID = 'resultsRssLink';
+    var RIGHT_COLUMN_ID = 'right_column';
+    var MIN_CONTENT_HEIGHT = 650;
+    var FEEDBACK_YESNO_FORM_ID = 'feedbackYesNoForm';
+    var FEEDBACK_FORM_ID = 'feedbackForm';
+    var FEEDBACK_YES_BUTTON = 'feedbackYesButton';
+    var FEEDBACK_NO_BUTTON = 'feedbackNoButton';
+    var FEEDBACK_DIALOG_ID = 'feedbackDialog';
+    var FEEDBACK_COMMENTS_ID = 'feedbackComments';
+    var FEEDBACK_TEXT_ID = 'feedbackTextArea';
+    var CHARS_REMAINING_ID = 'charsRemaining';
+    var FEATURED_ARTICLES_ID = 'featuredArticles';
+    var IMMEDIATE_HELP_ID = 'immediateHelp';
+    var CASE_ERROR_MSG_ID = 'createCaseErrorMsg';
+
+    var CONTACT_NO_BUTTON_ID = 'contactUsNoButton';
+    var CONTACT_YES_BUTTON_ID = 'contactUsYesButton';
+    var CONTACT_US_FORM_ID = 'contactUsForm';
+    var CONTACT_YES_NO_FORM_ID = 'contactYesNoForm';
+
+    // hides the "next" article link if there are no more articles
+    // the more var is set in the VF "articles" component each time the articleList tag iterates
+    var moreResults = false;
+    function hideNext() {
+      e = document.getElementById(NEXT_LINK_ID);
+      if (!e) return;
+      if (!moreResults) e.style.display = 'none';
+    }
+
+    var noResultsFound = true;
+    function hideResultsRss() { 
+      e = document.getElementById(RSS_RESULTS_LINK_ID);
+      if (!e) return;
+      if (noResultsFound) e.style.display = 'none';
+    }
+
+    function hideImmediateHelp(noResults) {
+      if (noResults) {
+        var o = $$('#' +IMMEDIATE_HELP_ID);
+        if (o.length) o[0].style.display = 'none';
+      }
+    }
+
+    function showFeedbackDialog() {
+      $$('#' +FEEDBACK_DIALOG_ID).modal();
+    }
+
+    function copyComments() {
+      var o = $$('[id$=' +FEEDBACK_COMMENTS_ID+ ']');
+      var p = $$('#' +FEEDBACK_TEXT_ID);
+      
+      if (o.length && p.length) o[0].value = p[0].value;
+    }
+
+    function toggleFeedbackYesNoButtons(isEnabled) {
+      var yes = $$('[id$=' +FEEDBACK_YES_BUTTON+ ']')[0];
+      var no = $$('[id$=' +FEEDBACK_NO_BUTTON+ ']')[0];
+
+      yes.disabled = !isEnabled;
+      no.disabled = !isEnabled;
+    }
+
+    function toggleContactYesNoButtons(isEnabled) {
+      var yes = $$('[id$=' +CONTACT_YES_BUTTON_ID+ ']')[0];
+      var no = $$('[id$=' +CONTACT_NO_BUTTON_ID+ ']')[0];
+
+      yes.disabled = !isEnabled;
+      no.disabled = !isEnabled;
+    }
+
+    function closeModal() {
+      $$('#feedbackDialog').modal('hide');
+      $$('#feedback-wrapper').children().hide();
+      $$('#feedback-wrapper').append('<p>Thanks for your feedback!</p>');
+    }
+
+    function countChars(event, o) {
+      var maxChars = 255;
+      var chars = document.getElementById(CHARS_REMAINING_ID);
+      var charsLeft = maxChars - o.value.length;
+
+      if (charsLeft <= 0) {
+        o.value = o.value.substring(0, maxChars-1);
+        charsLeft = 0;
+        chars.innerHTML = charsLeft;
+        return (event.keyCode == 8);
+      } else {
+        chars.innerHTML = charsLeft;
+        return true;
+      }
+    }
+
+    var atLeastOneFeatured = false;
+    function hideFeatured() {
+      var e = document.getElementById(FEATURED_ARTICLES_ID);
+      if (!e) return;
+      if (!atLeastOneFeatured) e.style.display = 'none';
+    }
+
+    function adjustHeight() {
+      var o = $$('#' +RIGHT_COLUMN_ID);
+
+      if (o.height() < MIN_CONTENT_HEIGHT) o.height(MIN_CONTENT_HEIGHT);
+    }
+
+    function rewriteContactUsFormAction() {
+      if (!contactUs) return;
+      
+      var actionURL = pkbHome;
+      if (viewingArticle) actionURL += '?id=kA613000000TPhpCAG';
+
+      var o = $$('[id$=' +CONTACT_US_FORM_ID+ ']');
+      var p = $$('[id$=' +CONTACT_YES_NO_FORM_ID+ ']');
+      if (o.length) o[0].action = actionURL;
+      if (p.length) p[0].action = actionURL;
+    }
+
+    function rewriteFeedbackFormAction() {
+      if (contactUs || !viewingArticle) return;
+
+      var actionURL = pkbHome + '?id=kA613000000TPhpCAG';
+
+      var o = $$('[id$=' +FEEDBACK_YESNO_FORM_ID+ ']');
+      var p = $$('[id$=' +FEEDBACK_FORM_ID+ ']');  
+
+      if (o.length) o[0].action = actionURL;
+      if (p.length) p[0].action = actionURL;
+
+    }
+
+    function clearCaseErrorMsg() {
+      var o = $$('[id$=' +CASE_ERROR_MSG_ID+ ']');
+      if (o.length) o[0].style.display = 'none';
+    }
+
+    function prepareToRenderOverlay() {
+      openDialogWhenReady = true; 
+    }
+
+    $$('#' +FEEDBACK_DIALOG_ID).ready(function() {
+      if (openDialogWhenReady) showFeedbackDialog();
+    });
+
+    $$(window).on('load', function() {
+      if (viewingArticle) adjustHeight();
+      rewriteContactUsFormAction();
+      rewriteFeedbackFormAction();
+    });
+  </script>
+    </head>
+    <body>
+  
+  <noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-W3NMLN" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W3NMLN');</script>
+    <div id="page-wrapper">
+    <div class="container-fluid header">
+        <div class="container" role="banner">
+            <div class="row">
+                <div class="col-sm-3 col-xs-9 logo"><a href="https://support.bigcommerce.com">
+                        <img alt="Bigcommerce Support" height="40" src="/resource/1495135987000/knowledge_assets/images/bigcommerce-support-logo.png" title="Bigcommerce Support - Home" /></a>
+                </div>
+                <div class="col-sm-9 col-xs-3 header-right">
+                    <span class="nav-toggle visible-xs"><i class="material-icons">menu</i></span>
+                    <ul class="list-inline text-right navigation">
+                        <li class="dropdown"><a href="https://support.bigcommerce.com">Home</a>
+                            <ul>
+                                <li><a href="https://support.bigcommerce.com">Support Home</a></li>
+                                <li><a href="https://www.bigcommerce.com">BigCommerce Home</a></li>
+                            </ul>
+                        </li>
+                        <li class="articles"><a href="https://support.bigcommerce.com/documentation" class="active">Documentation</a></li>
+                        <li class="university"><a href="https://support.bigcommerce.com/university">University</a></li>
+                        <li class="community"><a href="https://forum.bigcommerce.com/s/">Community</a></li>
+                        <li class="guides"><a href="https://support.bigcommerce.com/guides">Guides</a></li>
+                        <li class="contact"><a href="https://support.bigcommerce.com/contact?q=">Contact</a></li>
+                        <li><a href="http://status.bigcommerce.com">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid search-container">
+        <div class="container">
+            <div class="search-input-container">
+                <form action="https://support.bigcommerce.com" class="form" id="search-form" method="get">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <select class="form-control search-select">
+                                <option selected="selected" value="support">Resources</option>
+                                <option value="community">Community</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-8 col-xs-12">
+                            <div id="search-input-container">
+                                <input class="default" id="search-input" name="q" placeholder="Search our support resources" tabindex="1" type="text" />
+                            </div>
+                        </div>
+                        <div class="col-sm-2 hidden-xs">
+                            <a class="action btn btn-search" href="#" id="search-button" tabindex="2">Search</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid">
+            <div class="row categories-trigger text-center">Browse by Topic</div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 side-categories" role="navigation">
+                    <span class="hidden" id="active-category">Search_Engine_Optimization</span><ul class="categories" data-parent-category="Configuring Your Store">
+  <li data-category-name="Shipping"><a href="#">Shipping</a>
+    <ul>
+      <li><a href="/articles/Public/Shipping-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/The-Importance-of-Shipping">Guide to Shipping</a></li>
+      <li><a href="/articles/Public/Setting-Up-Shipping-Zones">Shipping Zones</a></li>
+      <li><a href="/articles/Public/Setting-Up-Shipping-Methods">Shipping Methods</a></li>
+      <li><a href="/articles/Public/Setting-up-Free-Shipping">Free Shipping</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Payments"><a href="#">Payments</a>
+    <ul>
+      <li><a href="/articles/Public/Payments-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Adding-a-Payment-Gateway">Connect Payment Gateway</a></li>
+      <li><a href="/articles/Public/Availabe-Payment-Gateways">Available Payment Gateways</a></li>
+      <li><a href="/articles/Public/Managing-Currencies">Currencies</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Tax"><a href="#">Tax</a>
+    <ul>
+      <li><a href="/articles/Public/Tax-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Configuring-Tax-Automatically">Automatic Taxes</a></li>
+      <li><a href="/articles/Public/tax-settings">Tax Settings</a></li>
+      <li><a href="/articles/Public/Tax-Zones">Tax Classes, Zones &amp; Rates</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Checkout"><a href="#">Checkout</a>
+    <ul>
+      <li><a href="/articles/Public/Checkout-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Checkout-Settings">Checkout Settings</a></li>
+      <li><a href="/articles/Public/Editing-Form-Fields">Form Fields</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Store Settings"><a href="#">Store Settings</a>
+    <ul>
+      <li><a href="/articles/Public/Store-Settings-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Website-Settings">Website</a></li>
+      <li><a href="/articles/Public/Display-Settings">Display</a></li>
+      <li><a href="/articles/Public/Image-Settings">Images</a></li>
+      <li><a href="/articles/Public/Share-Settings">Share</a></li>
+      <li><a href="/articles/Public/Language-and-Date-Settings">Language and Date</a></li>
+      <li><a href="/articles/Public/URL-Structure-Settings">URL Structure</a></li>
+      <li><a href="/articles/Public/Search-Settings">Search</a></li>
+      <li><a href="/articles/Public/Miscellaneous-Settings">Miscellaneous</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Domains DNS"><a href="#">Domains &amp; DNS</a>
+    <ul>
+      <li><a href="/articles/Public/Domains-DNS-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Domain-Name-Basics">Guide to Domains &amp; DNS</a></li>
+      <li><a href="/articles/Public/Pointing-your-domain">Domain</a></li>
+      <li><a href="/articles/Public/Email-MX-Records">Email &amp; MX Records</a></li>
+      <li><a href="/articles/Public/Managing-DNS">DNS Records</a></li>
+    </ul>
+  </li>
+  <li data-category-name="SSL"><a href="#">SSL</a>
+    <ul>
+      <li><a href="/articles/Public/SSL-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Installing-an-SSL">Bigcommerce SSL's</a></li>
+      <li><a href="/articles/Public/Installing-a-Third-Party-SSL">Third-Party SSLs</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Users"><a href="#">Users</a>
+    <ul>
+      <li><a href="/articles/Public/Users">Overview</a></li>
+      <li><a href="/articles/Public/Adding-Editing-Users">User Accounts</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Email Accounts"><a href="#">Email Accounts</a>
+    <ul>
+      <li><a href="/articles/Public/Email-Accounts-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Setting-Up-Email-Accounts">Email Accounts</a></li>
+    </ul>
+  </li>
+</ul><!-- /configuring your store -->
+
+<ul class="categories" data-parent-category="Running Your Store">
+  <li data-category-name="Products"><a href="#">Products</a>
+    <ul>
+      <li><a href="/articles/Public/Products-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Getting-Started-with-Products-and-Services">Guide to Products</a></li>
+      <li><a href="/articles/Learning/Getting-Started-with-Inventory-Management">Guide to Inventory Management</a></li>
+      <li><a href="/articles/Public/Adding-Products">Add Products</a></li>
+      <li><a href="/articles/Public/Searching-Products">Search Products</a></li>
+      <li><a href="/articles/Public/Creating-Downloadable-Products">Downloadable Products</a></li>
+      <li><a href="/articles/Public/Adding-Product-Options">Product Options</a></li>
+      <li><a href="/articles/Public/Using-Gift-Certificates">Gift Certificates</a></li>
+      <li><a href="/articles/Public/Managing-Product-Categories">Categories</a></li>
+      <li><a href="/articles/Public/Managing-Inventory">Inventory</a></li>
+      <li><a href="/articles/Public/Managing-Reviews">Reviews</a></li>
+      <li><a href="/articles/Public/Managing-Brands">Brands</a></li>
+      <li><a href="/articles/Public/Product-Filtering-Settings">Product Filtering</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Orders"><a href="#">Orders</a>
+    <ul>
+      <li><a href="/articles/Public/Orders-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Order-Management-Essentials">Guide to Order Management</a></li>
+      <li><a href="/articles/Public/Creating-a-Manual-Order">Manual Orders</a></li>
+      <li><a href="/articles/Public/Editing-an-Order">Edit Orders</a></li>
+      <li><a href="/articles/Public/Searching-Orders">Search Orders</a></li>
+      <li><a href="/articles/Public/Creating-Shipments">Shipments</a></li>
+      <li><a href="/articles/Public/Shipping-Labels">Shipping Labels</a></li>
+      <li><a href="/articles/Public/Processing-Returns">Returns</a></li>
+      <li><a href="/articles/Public/Order-ID">Order IDs</a></li>
+      <li><a href="/articles/Public/Understanding-Order-Statuses">Order Statuses</a></li>
+      <li><a href="/articles/Public/Using-Order-Actions">Order Actions</a></li>
+      <li><a href="/articles/Public/Order-Notifications">Order Notifications</a></li>
+      <li><a href="/articles/Public/Customer-Order-Notifications">Customer Order Notifications</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Customers"><a href="#">Customers</a>
+    <ul>  
+      <li><a href="/articles/Public/Customers-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Benefits-of-Customer-Management">Guide to Customer Management</a></li>
+      <li><a href="/articles/Public/Adding-Editing-a-Customer">Add/Edit Customers</a></li>
+      <li><a href="/articles/Public/Searching-Customers">Search Customers</a></li>
+      <li><a href="/articles/Public/Giving-Customers-a-Store-Credit">Store Credit</a></li>
+      <li><a href="/articles/Public/Setting-up-Customer-Groups">Customer Groups</a></li>
+      <li><a href="/articles/Public/Working-with-Customer-Accounts">Customer Experience</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Reports Analytics"><a href="#">Reports &amp; Analytics</a>
+    <ul>
+      <li><a href="/articles/Public/Analytics-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Benefits-of-Bigcommerce-Analytics">Guide to Bigcommerce Analytics</a></li>
+      <li><a href="/articles/Public/New-Bigcommerce-Analytics">New Bigcommerce Analytics</a></li>
+      <li><a href="/articles/Public/Classic-Analytics">Classic Analytics</a></li>
+      <li><a href="/articles/Public/Setting-Up-Google-Analytics">Google Analytics</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Import Export"><a href="#">Import / Export</a>
+    <ul>
+      <li><a href="/articles/Public/Import-Export-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Import-Export-Essentials">Guide to Import/Export</a></li>
+      <li><a href="/articles/Public/Exporting-Data">Export</a></li>
+      <li><a href="/articles/Public/Importing-Data">Import</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Backup"><a href="/articles/Public/Backing-Up-Your-Store">Backup</a>
+    <ul>
+      <li><a href="/articles/Public/Backing-Up-Your-Store">Back Up Your Store</a></li>
+    </ul>
+  </li>
+</ul> <!-- /running your store -->
+
+<ul class="categories" data-parent-category="Store Design &amp; Content">
+  <li data-category-name="Themes Design"><a href="#">Themes &amp; Design</a>
+    <ul>
+      <li><a href="/articles/Public/Themes-Design-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Uploading-a-Custom-Logo">Logo</a></li>
+      <li><a href="/articles/Public/Uploading-a-Custom-Favicon">Favicon</a></li>
+      <li><a href="/articles/Public/Using-the-Style-Editor">Style Editor</a></li>
+      <li><a href="/articles/Public/Using-the-Carousel-Builder">Carousel Builder</a></li>
+      <li><a href="/articles/Public/Creating-Editing-Banners">Banners</a></li>
+      <li><a href="/articles/Public/Customizing-Email-Templates">Store Emails</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Web Pages"><a href="#">Web Pages</a>
+    <ul>
+      <li><a href="/articles/Public/Web-Pages-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Web-Pages">Add Web Pages</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Blog"><a href="#">Blog</a>
+    <ul>
+      <li><a href="/articles/Public/Blog-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Using-the-Built-In-Blog">Built-in Blog</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Image Manager"><a href="#">Image Manager</a>
+    <ul>
+      <li><a href="/articles/Public/Image-Manager-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Using-the-Image-Manager">Image Manager</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Template Files"><a href="#">Template Files</a>
+    <ul>
+      <li><a href="/articles/Public/Bigcommerce-Template-Files">Template File Structure</a></li>
+    </ul>
+  </li>  
+  <li data-category-name="WebDAV"><a href="#">WebDAV</a>
+    <ul>
+      <li><a href="/articles/Public/WebDAV-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Connecting-to-WebDav">Connect to WebDav</a></li>
+    </ul>
+  </li>
+</ul><!-- /Store Design & Content -->
+
+<ul class="categories" data-parent-category="Marketing Your Store">
+  <li data-category-name="Search Engine Optimization"><a href="#">Search Engine Optimization</a>
+    <ul>
+      <li><a href="/articles/Public/SEO-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/What-is-SEO">Guide to SEO</a></li>
+      <li><a href="/articles/Learning/Value-of-Keywords">Guide to Keyword Research</a></li>
+      <li><a href="/articles/Public/Submitting-Your-Sitemap-to-Google">Google</a></li>
+      <li><a href="/articles/Public/Submitting-Your-Sitemap-and-Verifying-Your-Site-with-Bing">Bing</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Promotions"><a href="#">Promotions</a>
+    <ul>
+      <li><a href="/articles/Public/Promotions-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Using-Discount-Rules">Discounts</a></li>
+      <li><a href="/articles/Public/Using-Coupon-Codes">Coupons</a></li>
+      <li><a href="/articles/Public/Using-Sale-Pricing">Sale Pricing</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Social Media"><a href="#">Social Media</a>
+    <ul>
+      <li><a href="/articles/Public/Social-Media-Overview">Overview</a></li>
+      <li><a href="/articles/Public/Using-the-Built-In-Social-Media-Icons">Social Media Icons</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Email Marketing"><a href="#">Email Marketing</a>
+    <ul>
+      <li><a href="/articles/Public/Email-Marketing-Overview">Overview</a></li>
+      <li><a href="/articles/Learning/Boost-Your-Bottom-Line-with-Abandoned-Cart-Saver">Guide to Abandoned Cart Saver</a></li>
+      <li><a href="/articles/Public/Collecting-Newsletter-Subscriptions">Newsletter</a></li>
+      <li><a href="/articles/Public/Using-the-Abandoned-Cart-Saver">Abandoned Cart</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Multi Channel Marketing"><a href="#">Multi-Channel Marketing</a>
+    <ul>
+      <li><a href="/articles/Public/Multi-Channel-Marketing-Overview ">Overview</a></li>
+      <li><a href="/articles/Public/Selling-On-eBay">eBay</a></li>
+      <li><a href="/articles/Public/Sell-on-Amazon">Amazon</a></li>
+      <li><a href="/articles/Public/Selling-on-Google-Shopping">Google Shopping</a></li>
+      <li><a href="/articles/Public/Selling-on-Facebook-Shop-Pages">Facebook Shop</a></li>
+      <li><a href="/articles/Public/Selling-on-Pinterest">Pinterest Buyable Pins</a></li>
+    </ul>
+  </li>
+  <li data-category-name="Google Trusted Stores"><a href="#">Google Trusted Stores</a>
+    <ul>
+      <li><a href="/articles/Public/Applying-to-Google-Trusted-Stores">Google Trusted Stores</a></li>
+    </ul>
+  </li>
+</ul><!-- /Marketing Your Store -->
+
+<ul class="categories" data-parent-category="Billing Account">
+  <li data-category-name="Billing and Account"><a href="#">Billing &amp; Account</a>
+    <ul>
+      <li><a href="/articles/Public/Logging-Into-Your-Store">Logging In</a></li>
+      <li><a href="/articles/Public/Viewing-Billing-and-Account-Details">Client Area</a></li>
+      <li><a href="/articles/Public/Updating-your-Credit-Card">Payment Details</a></li>
+      <li><a href="/articles/Public/Creating-Viewing-Support-Cases">Support Cases</a></li>
+    </ul>
+  </li>
+</ul> <!-- /Billing & Account --><div class="card card-cta">
+    <a href="https://partners.bigcommerce.com/directory/" class="card-body text-center">
+        <i class="material-icons featured-icon">people_outline</i>
+        <h4>Partner Marketplace</h4>
+        <p>Find experts to boost your SEO, create a custom design or build an app.</p>
+    </a>
+</div><div class="card card-cta">
+    <a href="https://www.bigcommerce.com/apps/" class="card-body text-center">
+        <i class="material-icons featured-icon">web</i>
+          <h4>App Store</h4>
+          <p>Add on powerful enterprise integrations and ecommerce apps</p>
+    </a>
+</div>
+                </div>
+                <div class="col-md-9 col-sm-12" role="main">
+                    <div id="article-content">
+            <ol class="breadcrumb">
+                <li><a href="https://support.bigcommerce.com">BigCommerce Support</a></li>
+                <li><a href="https://support.bigcommerce.com/documentation">Documentation</a></li>
+                <li class="active article-label"></li>
+            </ol>
+            <span class="hidden" id="menu-title"></span>
+            <span class="hidden" id="feedback-visible">Yes</span>
+            <div class="content">
+                <h1>Content Delivery Network</h1><div class="section-content"><p>Many online services use a <strong>content distribution network</strong> (CDN) to deliver photos and other files as fast as possible. This improves <a href="https://moz.com/learn/seo/page-speed" target="_blank">site speed</a>, which is a metric <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" target="_blank">used by Google</a> and other search engines as a ranking factor for search results.  </p>
+
+<p>This works by keeping copies of commonly used photos and files simultaneously hosted at several data centers (nodes) around the world.</p>
+
+<p>Those photos and files are delivered by the node closest to the shopper, decreasing the distance they have to travel, thus making the site load faster. In this way, your store loads just as fast in Asia as it does in North America.</p>
+
+<p>Currently, BigCommerce has CDN nodes in London, Los Angeles, New York, Sydney, Tokyo, Sao Paulo, Hong Kong and Singapore.</p>
+
+<p>We recommend taking advantage of the BigCommerce CDN if you want to customize your store&#39;s design. See <a href="https://support.bigcommerce.com/articles/Public/Referencing-Assets-in-a-Theme" target="_self">Referencing Assets in a Theme</a> for proper format and syntax.</p>
+
+<div class="panel panel-default">
+<div class="panel-heading media">
+<div class="media-left pull-left"><span class="sl sl-bubble-ask-2 alert-icon"> </span></div>
+
+<div class="media-body">
+<p class="lead"><strong>Images still loading slowly?</strong> It could have something to do with the user&#39;s Internet Service Provider (ISP) or a javascript code. It&#39;s recommended to use a page load testing site like <a href="https://tools.pingdom.com/" target="_blank">Pingdom</a> to for further investigation. See the <a href="https://forum.bigcommerce.com/s/topic/0TO130000001PRSGA2/setup-management" target="_blank">BigCommerce Community</a> for more discussion on improving page load speed.</p>
+</div>
+</div>
+</div>
+</div><div class="article-footer"><div class="section">
+		<h3 id="related">Additional Resources</h3>
+			<ul><li><a href="/articles/Public/Optimizing-Your-Images" target="_blank">Optimizing Your Images</a></li><li><a href="/articles/Public/Optimizing-Your-Design" target="_blank">Optimizing Your Design</a></li><li><a href="/articles/Learning/Can-I-Optimize-My-Store-by-Myself" target="_blank">Can I Optimize My Store by Myself?</a></li></ul>
+		</div>
+	
+	</div>
+            </div>
+                    </div>
+<div id="feedback-wrapper">
+<form id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm" name="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm" method="post" action="/kb_Public_Article_kav?id=kA613000000TPhp" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm" value="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm" />
+<div id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoContainer"><script id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:j_id75" type="text/javascript">refreshYesNo=function(){A4J.AJAX.Submit('j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm',null,{'similarityGroupingId':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:j_id75','parameters':{'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:j_id75':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:j_id75'} ,'status':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoStatus'} )};
+</script><div id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedback">
+        <h4>Was this article helpful?</h4>
+        <div class="form-inline" role="form">
+          <div class="form-group"><input class="btn btn-default" id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesButton" name="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesButton" onclick="toggleFeedbackYesNoButtons();;A4J.AJAX.Submit('j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm',event,{'similarityGroupingId':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesButton','parameters':{'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesButton':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesButton'} ,'status':'j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoStatus'} );return false;" value="Yes" type="button" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-default" data-target="#feedbackDialog" data-toggle="modal" id="feedbackNoButton" type="button">No</button>
+          </div>
+        </div></div><span id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoStatus"><span id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoStatus.start" style="display: none"><img src="/resource/1413828984000/pkb_loadingdots" /></span><span id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:feedbackYesNoStatus.stop"></span></span></div><div id="j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm:j_id107"></div>
+</form><span id="ajax-view-state-page-container" style="display: none"><span id="ajax-view-state" style="display: none"><input type="hidden"  id="com.salesforce.visualforce.ViewState" name="com.salesforce.visualforce.ViewState" value="i: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" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateVersion" name="com.salesforce.visualforce.ViewStateVersion" value="201706142125120733" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateMAC" name="com.salesforce.visualforce.ViewStateMAC" value="AGV5SnViMjVqWlNJNkltOU1jMEpSVFVaZlkwTlpkbFJWYjNGS1V6VjRZekJMTlVaNVgwMW9iM295ZURKYVNWOUxTMk5ZVWpCY2RUQXdNMlFpTENKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUlzSW10cFpDSTZJbnRjSW5SY0lqcGNJakF3UkRNd01EQXdNREF4UmtSRFIxd2lMRndpZGx3aU9sd2lNREF3TURBd01EQXdNREF3TURBd1hDSXNYQ0poWENJNlhDSjJabk5wWjI1cGJtZHJaWGxjSWl4Y0luVmNJanBjSWpBd05URXpNREF3TURCQ1UzcHhWRndpZlNJc0ltTnlhWFFpT2xzaWFXRjBJbDBzSW1saGRDSTZNVFE1TnpVMk5UWXhNVFF6TkN3aVpYaHdJam93ZlE9PS4uNWRpWi1vM2wyejRYRkFiUEFzMkFhS1NaNjFLS094VGFld0VYWUZVc19XTT0=" /></span></span>
+</div>
+<form id="j_id0:j_id1:j_id70:j_id71:feedbackForm" name="j_id0:j_id1:j_id70:j_id71:feedbackForm" method="post" action="/kb_Public_Article_kav?id=kA613000000TPhp" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_id0:j_id1:j_id70:j_id71:feedbackForm" value="j_id0:j_id1:j_id70:j_id71:feedbackForm" />
+<div id="j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id82"><input id="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackComments" type="hidden" name="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackComments" />
+ 
+    <div aria-hidden="true" class="modal fade" id="feedbackDialog">
+
+      <div class="modal-dialog modal-md" id="feedbackResponse">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Your Feedback is Appreciated</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>Why wasn't this article helpful to you?</p>
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6"><select id="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackOption" name="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackOption" class="form-control feedback-select-option" size="0">	<option value="None">--None--</option>
+	<option value="Was not able to follow instructions">Was not able to follow instructions</option>
+	<option value="Followed the instructions carefully, but didn't get expected outcome">Followed the instructions carefully, but didn't get expected outcome</option>
+	<option value="Not enough context provided or missing info">Not enough context provided or missing info</option>
+	<option value="Content seems outdated or incorrect">Content seems outdated or incorrect</option>
+	<option value="Original question was not answered">Original question was not answered</option>
+	<option value="Did not help, I'm looking for help with a known issue">Did not help, I'm looking for help with a known issue</option>
+	<option value="I don't like this feature">I don't like this feature</option>
+	<option value="I have feedback about Bigcommerce">I have feedback about Bigcommerce</option>
+	<option value="Other (please specify)">Other (please specify)</option>
+</select>
+                  </div>
+                </div>
+            </div>
+            <div class="feedback-other-details">
+              <textarea class="form-control" id="feedbackTextArea" maxlength="255" onblur="copyComments();" onkeydown="return countChars(event, this);"></textarea>
+              <p>Characters Remaining: <span id="charsRemaining">255</span></p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-link" data-dismiss="modal" type="button">Cancel</button><input class="btn btn-primary" id="j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id86" name="j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id86" onclick="if(!checkSelect()){return}; copyComments(); refreshYesNo(); toggleFeedbackYesNoButtons(false); closeModal();;A4J.AJAX.Submit('j_id0:j_id1:j_id70:j_id71:feedbackForm',event,{'similarityGroupingId':'j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id86','parameters':{'j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id86':'j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id86'} ,'status':'j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackStatus'} );return false;" value="Submit" type="button" /><span id="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackStatus"><span id="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackStatus.start" style="display: none"><img src="/resource/1413828984000/pkb_loadingdots" /></span><span id="j_id0:j_id1:j_id70:j_id71:feedbackForm:feedbackStatus.stop"></span></span>
+          </div>
+        </div>
+      </div>
+
+    </div></div><div id="j_id0:j_id1:j_id70:j_id71:feedbackForm:j_id108"></div>
+</form>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid footer--cta" role="banner">
+        <div class="container"><div class="text-center">
+                <h3>Create your beautiful online store today.</h3>
+                <a href="https://www.bigcommerce.com/free-trial" class="btn btn-primary btn-lg btn-cta">Start your free trial</a>
+            </div>
+        </div>
+    </div>
+  <div class="container-fluid" id="footer" role="contentinfo">
+    <div class="container">
+        <div class="col-sm-6 footer-left">
+            <span class="copyright"><img class="footer-logo" src="/resource/1495135987000/knowledge_assets/images/BigCommerce-logo-white.svg?orgId=00D30000001FDCG" width="110" />&copy; Copyright 2003 - 2017 BigCommerce Pty. Ltd. Shopping Cart Software</span>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ul class="list-inline bigcommerce-social-links">
+                <li><a href="http://twitter.com/Bigcommerce" title="Twitter">Twitter</a></li>
+                <li><a href="http://www.facebook.com/Bigcommerce" title="Facebook">Facebook</a></li>
+                <li><a href="http://www.linkedin.com/company/bigcommerce" title="LinkedIn">LinkedIn</a></li>
+                <li><a href="http://www.youtube.com/BigcommerceDotCom" title="YouTube">YouTube</a></li>
+                <li><a href="http://pinterest.com/bigcommerce/" title="Pinterest">Pinterest</a></li>
+                <li><a href="https://plus.google.com/+bigcommerce" title="Google Plus">Google Plus</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <script src="/resource/1495135987000/knowledge_assets/js/youtube-api.js" type="text/javascript"></script>
+    </div>
+    </body>
+    <script src="https://c.la3-c1-chi.salesforceliveagent.com/content/g/js/36.0/deployment.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        liveagent.setChatWindowHeight(800);
+        liveagent.init('https://d.la3-c1-chi.salesforceliveagent.com/chat', '572a0000000H7DJ', '00D30000001FDCG');
+    </script>
+    <script type="text/javascript">
+        var chatOnline = jQuery('.live-chat-online');
+        var chatOffline = jQuery('.live-chat-offline');
+        if(!window._laq){window._laq = [];}
+        var chatIdNum = 0;
+        jQuery(chatOnline).each(function(index) {
+            var onlineId = "online-" + chatIdNum + index;
+            jQuery(this).attr('id',onlineId);
+            window._laq.push(function() {
+                liveagent.showWhenOnline('573a00000008j2D',document.getElementById(onlineId));
+            });
+            chatIdNum++;
+        });
+        jQuery(chatOffline).each(function(index) {
+            var offlineId = "online-" + chatIdNum + index;
+            jQuery(this).attr('id',offlineId);
+            window._laq.push(function() {
+                liveagent.showWhenOffline('573a00000008j2D',document.getElementById(offlineId));
+            });
+            chatIdNum++;
+        });
+    </script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-10308612-4']);
+       _gaq.push(['_trackPageview']);
+
+    (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script type="text/javascript">
+    var _kiq = _kiq || [];
+    (function(){
+      setTimeout(function(){
+      var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+      s.async = true; s.src = '//s3.amazonaws.com/ki.js/40877/7Su.js'; f.parentNode.insertBefore(s, f);
+      }, 1);
+    })();
+  </script>
+  <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0013/5604.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script>
+</html><script type="text/javascript">Sfdc.onReady(function(){
+	SfdcApp && SfdcApp.Visualforce && SfdcApp.Visualforce.VSManager && SfdcApp.Visualforce.VSManager.vfPrepareForms(["j_id0:j_id1:j_id70:j_id71:feedbackForm","j_id0:j_id1:j_id70:j_id71:feedbackYesNoForm"]);
+
+});</script>
