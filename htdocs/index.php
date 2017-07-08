@@ -72,12 +72,23 @@
    </ul>
    <section class="top-bar-section">
     <ul class="menuItems">
-     <li class="toggleDropdown toggleDropdown--1 ">
+<!--     <li class="toggleDropdown toggleDropdown--1 ">
       <a href="#" title="Solutions" >Solutions</a>
      </li>
      <li class="toggleDropdown toggleDropdown--2 ">
       <a href="#" title="Sell everywhere" >Sell everywhere</a>
      </li>
+-->
+     <li class=" ">
+      <a href="/features/" title="Возиожности">Возможности</a>
+     </li>
+     <li class=" ">
+      <a href="/costs/" title="Стоимость">Стоимость</a>
+     </li>
+     <li class=" ">
+      <a href="/blog/" title="Блог">Блог</a>
+     </li>
+<!--
      <li class=" ">
       <a href="/features/" title="Features" >Features</a>
      </li>
@@ -90,6 +101,7 @@
      <li class="toggleDropdown toggleDropdown--6 ">
       <a href="#" title="Resources" >Resources</a>
      </li>
+-->
     </ul>
    </section>
    <div class="top-bar-actions">
