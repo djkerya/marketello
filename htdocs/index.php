@@ -654,87 +654,115 @@
 	 <div class="footer-nav">
 	  <div class="footer-nav-column footer-nav-column--large">
 	   <h4 class="footer-nav-heading">
-	    <a href="/sell/" title="Sell Online"class="footer-links-link ">Sell Online</a>
-	   </h4><ul class="footer-links">
-	   <li class="footer-links-item">
-	    <a href="/features/" title="Features"class="footer-links-link ">Features</a>
-	   </li><li class="footer-links-item">
-	    <a href="/pricing/" title="Pricing"class="footer-links-link ">Pricing</a>
-	   </li><li class="footer-links-item">
-	    <a href="/showcase/" title="Ecommerce Stores"class="footer-links-link ">Ecommerce Stores</a>
-	   </li><li class="footer-links-item">
-	    <a href="/enterprise-ecommerce-solution/" title="Enterprise Ecommerce"class="footer-links-link ">Enterprise Ecommerce</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/shopping-cart/" title="Shopping Cart" class="footer-links-link ">Shopping Cart</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/blog/best-ecommerce-website-design/" title="Ecommerce Design"target="_blank"class="footer-links-link ">Ecommerce Design</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/amazon/" title="Sell on Amazon"class="footer-links-link ">Sell on Amazon</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/ecommerce-solutions/" title="Ecommerce Solution"class="footer-links-link ">Ecommerce Solution</a>
-	   </li><li class="footer-links-item">
-	    <a href="/facebook/" title="Sell on Facebook"class="footer-links-link ">Sell on Facebook</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/features/secure-web-hosting/" title="Ecommerce Hosting" class="footer-links-link ">Ecommerce Hosting</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/features/omni-channel-software/pos-integrations/" title="POS" class="footer-links-link">POS</a>
+<!--
+	    <a href="/sell/" title="Sell Online" class="footer-links-link ">Sell Online</a>
+-->
+	    <a href="/contact/" title="Связаться с нами" class="footer-links-link ">Связаться с нами</a>
+	   </h4>
+
+	   <ul class="footer-links">
+	    <li class="footer-links-item">
+<!--
+	     <a href="/features/" title="Features" class="footer-links-link ">Features</a>
+-->
+	     <a href="/about/" title="О сервисе" class="footer-links-link ">О сервисе</a>
 	    </li>
-	   <li class="footer-links-item">
-	    <a href="/features/ecommerce-api/" title="Ecommerce API"class="footer-links-link ">Ecommerce API</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/features/b2b-ecommerce-platform/" title="B2B Ecommerce"class="footer-links-link ">B2B Ecommerce</a>
-	   </li><li class="footer-links-item">
-	    <a href="/ecommerce-website/" title="Ecommerce Website"class="footer-links-link ">Ecommerce Website</a>
-	   </li>
-	  </ul>
-	 </div>
-	 <!--//Footer Column -->
-	 <div class="footer-nav-column footer-nav-column--large">
-	  <h4 class="footer-nav-heading">
-	   <a href="/resources/" title="Resources" class="footer-links-link">Resources</a>
-	  </h4>
-	  <ul class="footer-links">
-	   <li class="footer-links-item">
-	    <a href="/apps/" title="Apps &amp; Integrations" class="footer-links-link">Apps &amp; Integrations</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/ecommerce-answers/" title="Ecommerce Answers" class="footer-links-link ">Ecommerce Answers</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/theme-store/" title="Templates &amp; Themes" class="footer-links-link">Templates &amp; Themes</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/developer/" title="Developer Portal" class="footer-links-link">Developer Portal</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/partners/directory/" title="Partner Services" target="_blank" class="footer-links-link">Partner Services</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/developer/api/" title="API Documentation" class="footer-links-link">API Documentation</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/university/" title="Marketello University" class="footer-links-link">Marketello University</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/blog/" title="Marketello Blog" class="footer-links-link">Marketello Blog</a>
-	   </li>
-	   <li class="footer-links-item">
-	    <a href="/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a>
-	   </li>
-	  </ul>
-	 </div>
-	 <!--//Footer Column -->
+<!--
+	    <li class="footer-links-item">
+	     <a href="/pricing/" title="Pricing" class="footer-links-link ">Pricing</a>
+	    </li>
+-->
+	    <li class="footer-links-item">
+	     <a href="/oferta/" title="Публичная оферта" class="footer-links-link ">Публичная оферта</a>
+	    </li>
+<!--
+	    <li class="footer-links-item">
+ 	     <a href="/showcase/" title="Ecommerce Stores" class="footer-links-link ">Ecommerce Stores</a>
+	    </li><li class="footer-links-item">
+	     <a href="/enterprise-ecommerce-solution/" title="Enterprise Ecommerce"class="footer-links-link ">Enterprise Ecommerce</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/shopping-cart/" title="Shopping Cart" class="footer-links-link ">Shopping Cart</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/blog/best-ecommerce-website-design/" title="Ecommerce Design"target="_blank"class="footer-links-link ">Ecommerce Design</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/amazon/" title="Sell on Amazon"class="footer-links-link ">Sell on Amazon</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/ecommerce-solutions/" title="Ecommerce Solution"class="footer-links-link ">Ecommerce Solution</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/facebook/" title="Sell on Facebook"class="footer-links-link ">Sell on Facebook</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/features/secure-web-hosting/" title="Ecommerce Hosting" class="footer-links-link ">Ecommerce Hosting</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/features/omni-channel-software/pos-integrations/" title="POS" class="footer-links-link">POS</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/features/ecommerce-api/" title="Ecommerce API"class="footer-links-link ">Ecommerce API</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/features/b2b-ecommerce-platform/" title="B2B Ecommerce"class="footer-links-link ">B2B Ecommerce</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/ecommerce-website/" title="Ecommerce Website"class="footer-links-link ">Ecommerce Website</a>
+	    </li>
+-->
+	   </ul>
+	  </div>
+	  <!--//Footer Column -->
+	  <div class="footer-nav-column footer-nav-column--large">
+	   <h4 class="footer-nav-heading">
+<!--
+	    <a href="/resources/" title="Resources" class="footer-links-link">Resources</a>
+-->
+	    <a href="/school/" title="Школа e-Commerce продаж" class="footer-links-link">Школа e-Commerce продаж</a>
+	   </h4>
+<!--
+	   <ul class="footer-links">
+	    <li class="footer-links-item">
+	     <a href="/apps/" title="Apps &amp; Integrations" class="footer-links-link">Apps &amp; Integrations</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/ecommerce-answers/" title="Ecommerce Answers" class="footer-links-link ">Ecommerce Answers</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/theme-store/" title="Templates &amp; Themes" class="footer-links-link">Templates &amp; Themes</a>
+	    </li>
+	    <li class="footer-links-item">
+ 	     <a href="/developer/" title="Developer Portal" class="footer-links-link">Developer Portal</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/partners/directory/" title="Partner Services" target="_blank" class="footer-links-link">Partner Services</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/developer/api/" title="API Documentation" class="footer-links-link">API Documentation</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/university/" title="Marketello University" class="footer-links-link">Marketello University</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/blog/" title="Marketello Blog" class="footer-links-link">Marketello Blog</a>
+	    </li>
+	    <li class="footer-links-item">
+	     <a href="/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a>
+	    </li>
+	   </ul>
+-->
+	  </div>
+	  <!--//Footer Column -->
 	 <div class="footer-nav-column">
 	  <h4 class="footer-nav-heading">
+<!--
 	   <a href="/support/" title="Support" target="_blank" class="footer-links-link">Support</a>
+-->
+	   <a href="/jobs/" title="Вакансии" target="_blank" class="footer-links-link">Вакансии</a>
 	  </h4>
+<!--
 	  <ul class="footer-links">
 	   <li class="footer-links-item">
 	    <a href="/forum/" title="Community Forum" target="_blank" class="footer-links-link">Community Forum</a>
@@ -749,12 +777,17 @@
 	    <a href="/support/" title="Contact Support" target="_blank" class="footer-links-link">Contact Support</a>
 	   </li>
 	  </ul>
+-->
 	 </div>
 	 <!--//Footer Column -->
 	 <div class="footer-nav-column">
 	  <h4 class="footer-nav-heading">
+	   <a href="/partners/" title="Партнёрам" class="footer-links-link">Партнёрам</a>
+<!--
 	   <a href="/about-us/" title="Company" class="footer-links-link">Company</a>
+-->
 	  </h4>
+<!--
 	  <ul class="footer-links">
 	   <li class="footer-links-item">
 	    <a href="/press/awards/" title="Awards" class="footer-links-link">Awards</a>
@@ -775,9 +808,11 @@
 	    <a href="/privacy/" title="Privacy Policy"class="footer-links-link ">Privacy Policy</a>
 	   </li>
 	  </ul>
+-->
 	 </div>
 	 <!--//Footer Column -->
-	</div>
+	 </div>
+	 
 	<!-- //Footer Nav -->
 	<div class="footer-bottom">
 	 <div class="footer-bottom-copyright footer-bottom-copyright--desktop">
