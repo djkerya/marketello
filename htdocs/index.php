@@ -565,7 +565,10 @@
      <div class="block-container">
       <div class="block-container-inner">
        <div class="block-text">
+<!--
         <h2 style="text-align: center; padding-bottom:40px;">Everything you need to grow your business</h2>
+-->
+        <h2 style="text-align: center; padding-bottom:40px;">Начите продавать свои товары в Евросоюзе уже сейчас.</h2>
        </div>
        <div class="block--twoColAbsolute-row block--twoColAbsolute-row--split5">
         <div class="block--twoColAbsolute-column">
@@ -573,17 +576,41 @@
           <img style="left:545px;top:60px;" src="https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/screens/home-grow.png?mtime=20160315115213" alt="home-grow">
          </div>
          <div class="block-text">
+<!--
           <h4>Build the ultimate shopping experience</h4>
           <p><span class="type-small">Our revolutionary design platform lets you create stores that engage 
            shoppers and make more sales. Choose from the best responsive ecommerce templates on the market 
            or build a fully custom site.</span>
           </p>
+-->
+          <h4>Без офиса, регистрации компании, склада и сотрудников.</h4>
+          <p>
+           <span class="type-small">
+            Прямо из Украины. Благодаря Marketello.
+           </span>
+          </p>
+<!--
           <h4>Increase sales with the latest features</h4>
           <p><span class="type-small">Best-in-class marketing and conversion tools enable our merchants to 
            grow at 2x the industry average. Drive more traffic, convert more visitors and seamlessly sell 
            on multiple channels from a single location.</span>
           </p>
+-->
+          <h4>Всю работу по локализациимы возьмем на себя.</h4>
+          <p>
+           <span class="type-small">
+            Продвижение, складирование, доставка, колл-центр и вывод денег.
+           </span>
+          </p>
+<!--
           <h4>Get unparalleled performance</h4>
+          <p><span class="type-small">BigCommerce merchants benefit from industry-leading performance and 
+           stability, including an average uptime of more than 99.99% and sites that load fast for 
+           maximum conversion.</span>
+          </p>
+-->
+          <h4>Ваши товары на более чем 300 европейских прайс-агрегаторах и маркетплейсах</h4>
+<!--
           <p><span class="type-small">BigCommerce merchants benefit from industry-leading performance and 
            stability, including an average uptime of more than 99.99% and sites that load fast for 
            maximum conversion.</span>
@@ -593,6 +620,7 @@
            like Magento. You’ll spend less time managing technology and get regular updates with new, 
            cutting-edge features.</span>
           </p>
+-->
          </div>
         </div>
        </div>
