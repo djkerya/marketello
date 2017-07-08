@@ -692,7 +692,132 @@
 	    <a href="/features/b2b-ecommerce-platform/" title="B2B Ecommerce"class="footer-links-link ">B2B Ecommerce</a>
 	   </li><li class="footer-links-item">
 	    <a href="/ecommerce-website/" title="Ecommerce Website"class="footer-links-link ">Ecommerce Website</a>
-	   </li></ul></div><!--//Footer Column --><div class="footer-nav-column footer-nav-column--large"><h4 class="footer-nav-heading"><a href="/resources/" title="Resources"class="footer-links-link ">Resources</a></h4><ul class="footer-links"><li class="footer-links-item"><a href="/apps/" title="Apps &amp; Integrations" class="footer-links-link ">Apps &amp; Integrations</a></li><li class="footer-links-item"><a href="/ecommerce-answers/" title="Ecommerce Answers"class="footer-links-link ">Ecommerce Answers</a></li><li class="footer-links-item"><a href="/theme-store/" title="Templates &amp; Themes"class="footer-links-link ">Templates &amp; Themes</a></li><li class="footer-links-item"><a href="https://developer.bigcommerce.com/" title="Developer Portal"class="footer-links-link ">Developer Portal</a></li><li class="footer-links-item"><a href="https://partners.bigcommerce.com/directory/" title="Partner Services"target="_blank"class="footer-links-link ">Partner Services</a></li><li class="footer-links-item"><a href="https://developer.bigcommerce.com/api/" title="API Documentation"class="footer-links-link ">API Documentation</a></li><li class="footer-links-item"><a href="https://support.bigcommerce.com/university" title="Bigcommerce University"class="footer-links-link ">BigCommerce University</a></li><li class="footer-links-item"><a href="/blog/" title="Bigcommerce Blog"class="footer-links-link ">BigCommerce Blog</a></li><li class="footer-links-item"><a href="/case-study/" title="Case Studies"class="footer-links-link ">Case Studies</a></li></ul></div><!--//Footer Column --><div class="footer-nav-column"><h4 class="footer-nav-heading"><a href="https://support.bigcommerce.com/" title="Support"target="_blank"class="footer-links-link ">Support</a></h4><ul class="footer-links"><li class="footer-links-item"><a href="https://forum.bigcommerce.com/s/" title="Community Forum"target="_blank"class="footer-links-link ">Community Forum</a></li><li class="footer-links-item"><a href="/partners/" title="Become a Partner"class="footer-links-link ">Become a Partner</a></li><li class="footer-links-item"><a href="/partners/affiliates/" title="Become an Affiliate"class="footer-links-link ">Become an Affiliate</a></li><li class="footer-links-item"><a href="https://support.bigcommerce.com/" title="Contact Support"target="_blank"class="footer-links-link ">Contact Support</a></li></ul></div><!--//Footer Column --><div class="footer-nav-column"><h4 class="footer-nav-heading"><a href="/about-us/" title="Company"class="footer-links-link ">Company</a></h4><ul class="footer-links"><li class="footer-links-item"><a href="/press/awards/" title="Awards"class="footer-links-link ">Awards</a></li><li class="footer-links-item"><a href="/contact/" title="Contact Us"class="footer-links-link ">Contact Us</a></li><li class="footer-links-item"><a href="/press/" title="Press Center"class="footer-links-link ">Press Center</a></li><li class="footer-links-item"><a href="/careers/" title="Careers - we&#039;re hiring!"class="footer-links-link ">Careers - we&#039;re hiring!</a></li><li class="footer-links-item"><a href="/terms/" title="Terms of Service"class="footer-links-link ">Terms of Service</a></li><li class="footer-links-item"><a href="/privacy/" title="Privacy Policy"class="footer-links-link ">Privacy Policy</a></li></ul></div><!--//Footer Column --></div><!-- //Footer Nav --><div class="footer-bottom"><div class="footer-bottom-copyright footer-bottom-copyright--desktop"><a href="/"><img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo"></a><span class="copyright">&copy; Copyright 2003 - 2017 BigCommerce Pty. Ltd. <a href="/" class="footer-links-link">Ecommerce Platform</a></span></div><div class="footer-bottom-social"><ul class="footer-links footer-links--horizontal"><li class="footer-links-item"><a href="http://twitter.com/Marketello" title="Twitter" target="_blank"class="footer-links-link">Twitter</a></li><li class="footer-links-item"><a href="http://www.facebook.com/Marketello" title="Facebook" target="_blank" class="footer-links-link">Facebook</a></li><li class="footer-links-item"><a href="http://www.linkedin.com/company/marketello" title="LinkedIn" target="_blank" class="footer-links-link">LinkedIn</a></li><li class="footer-links-item"><a href="http://www.youtube.com/Marketello" title="YouTube" target="_blank" class="footer-links-link">YouTube</a></li><li class="footer-links-item"><a href="http://pinterest.com/marketello/" title="Pinterest" target="_blank" class="footer-links-link">Pinterest</a></li><li class="footer-links-item"><a href="https://plus.google.com/+marketello" title="Google Plus" target="_blank" class="footer-links-link">Google Plus</a></li></ul></div><div class="footer-bottom-copyright footer-bottom-copyright--mobile"><span class="copyright">&copy;Copyright 2003 - 2017 BigCommerce Pty. Ltd. Shopping Cart Software</span></div></div><!-- //Footer Bottom --></footer><contact-us></contact-us></div>
+	   </li>
+	  </ul>
+	 </div>
+	 <!--//Footer Column -->
+	 <div class="footer-nav-column footer-nav-column--large">
+	  <h4 class="footer-nav-heading">
+	   <a href="/resources/" title="Resources" class="footer-links-link">Resources</a>
+	  </h4>
+	  <ul class="footer-links">
+	   <li class="footer-links-item">
+	    <a href="/apps/" title="Apps &amp; Integrations" class="footer-links-link">Apps &amp; Integrations</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/ecommerce-answers/" title="Ecommerce Answers" class="footer-links-link ">Ecommerce Answers</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/theme-store/" title="Templates &amp; Themes" class="footer-links-link">Templates &amp; Themes</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/developer/" title="Developer Portal" class="footer-links-link">Developer Portal</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/partners/directory/" title="Partner Services" target="_blank" class="footer-links-link">Partner Services</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/developer/api/" title="API Documentation" class="footer-links-link">API Documentation</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/university/" title="Marketello University" class="footer-links-link">Marketello University</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/blog/" title="Marketello Blog" class="footer-links-link">Marketello Blog</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a>
+	   </li>
+	  </ul>
+	 </div>
+	 <!--//Footer Column -->
+	 <div class="footer-nav-column">
+	  <h4 class="footer-nav-heading">
+	   <a href="/support/" title="Support" target="_blank" class="footer-links-link">Support</a>
+	  </h4>
+	  <ul class="footer-links">
+	   <li class="footer-links-item">
+	    <a href="/forum/" title="Community Forum" target="_blank" class="footer-links-link">Community Forum</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/partners/" title="Become a Partner" class="footer-links-link">Become a Partner</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/partners/affiliates/" title="Become an Affiliate" class="footer-links-link">Become an Affiliate</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/support/" title="Contact Support" target="_blank" class="footer-links-link">Contact Support</a>
+	   </li>
+	  </ul>
+	 </div>
+	 <!--//Footer Column -->
+	 <div class="footer-nav-column">
+	  <h4 class="footer-nav-heading">
+	   <a href="/about-us/" title="Company" class="footer-links-link">Company</a>
+	  </h4>
+	  <ul class="footer-links">
+	   <li class="footer-links-item">
+	    <a href="/press/awards/" title="Awards" class="footer-links-link">Awards</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/contact/" title="Contact Us" class="footer-links-link">Contact Us</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/press/" title="Press Center" class="footer-links-link">Press Center</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/careers/" title="Careers - we&#039;re hiring!" class="footer-links-link">Careers - we&#039;re hiring!</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/terms/" title="Terms of Service" class="footer-links-link ">Terms of Service</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="/privacy/" title="Privacy Policy"class="footer-links-link ">Privacy Policy</a>
+	   </li>
+	  </ul>
+	 </div>
+	 <!--//Footer Column -->
+	</div>
+	<!-- //Footer Nav -->
+	<div class="footer-bottom">
+	 <div class="footer-bottom-copyright footer-bottom-copyright--desktop">
+	  <a href="/"><img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo"></a>
+	  <span class="copyright">&copy; Copyright 2016 - <?php echo date("Y"); ?> Marketello LLC 
+	   <a href="/" class="footer-links-link">Ecommerce Platform</a>
+	  </span>
+	 </div>
+	 <div class="footer-bottom-social">
+	  <ul class="footer-links footer-links--horizontal">
+	   <li class="footer-links-item">
+	    <a href="http://twitter.com/Marketello" title="Twitter" target="_blank" class="footer-links-link">Twitter</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="http://www.facebook.com/Marketello" title="Facebook" target="_blank" class="footer-links-link">Facebook</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="http://www.linkedin.com/company/marketello" title="LinkedIn" target="_blank" class="footer-links-link">LinkedIn</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="http://www.youtube.com/Marketello" title="YouTube" target="_blank" class="footer-links-link">YouTube</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="http://pinterest.com/marketello/" title="Pinterest" target="_blank" class="footer-links-link">Pinterest</a>
+	   </li>
+	   <li class="footer-links-item">
+	    <a href="https://plus.google.com/+marketello" title="Google Plus" target="_blank" class="footer-links-link">Google Plus</a>
+	   </li>
+	  </ul>
+	 </div>
+	 <div class="footer-bottom-copyright footer-bottom-copyright--mobile">
+	  <span class="copyright">
+	   &copy;Copyright 2016 - <?php echo date("Y"); ?> Marketello LLC Shopping Cart Software
+	  </span>
+	 </div>
+	</div>
+	<!-- //Footer Bottom -->
+       </footer>
+       <contact-us></contact-us>
+      </div>
 
 
 <script type='text/javascript' src='https://c.la3-c1-chi.salesforceliveagent.com/content/g/js/39.0/deployment.js'></script>
