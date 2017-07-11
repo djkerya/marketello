@@ -281,17 +281,25 @@
             </div>
             <div class="eyeCatcher eyeCatcher--circleXl" style="top:-122px;left:-100px;">
              <div class="eyeCatcher-container">
+<!--
               <h1 class="eyeCatcher-headline">28%</h1>
               <h3 class="eyeCatcher-tagline">Annual Growth</h3>
               <div class="eyeCatcher-body">
                According to research by Ipsos, BigCommerce merchants grow 28% year over year, nearly 2x 
                 the industry average.
               </div>
+-->
+              <h1 class="eyeCatcher-headline">300</h1>
+              <h3 class="eyeCatcher-tagline">И более</h3>
+              <div class="eyeCatcher-body">
+               Европейских прайс-аггрегаторов и маркетплейсов на которых мы можем разместить Ваши товары.
+              </div>
              </div>
             </div>
            </div>
            <div class="block--multiColAbsolute-column columnWidth--3">
             <div class="block-text">
+<!--
              <h1 class="type-weight--thin" style="text-align: center; margin-bottom: 10px;" rel="text-align: center; padding-top:280px; margin-bottom: 10px;">
               99.99%
              </h1>
@@ -304,10 +312,23 @@
                including 100% availability during Cyber Week.
               </span>
              </p>
+-->
+             <h1 class="type-weight--thin" style="text-align: center; margin-bottom: 10px;" rel="text-align: center; padding-top:280px; margin-bottom: 10px;">
+              256 000 000
+             </h1>
+             <h3 style="text-align: center; margin-bottom: 10px;" rel="text-align: center; margin-bottom: 10px;">
+              Потенциальных покупателей
+             </h3>
+             <p style="text-align: center; padding-bottom: 70px;">
+              <span class="type-small">
+               В 28 странах и список этих стран будет постоянно расширяться
+              </span>
+             </p>
             </div>
            </div>
            <div class="block--multiColAbsolute-column columnWidth--3">
             <div class="block-text">
+<!--
              <h1 class="type-weight--thin" style="text-align: center; margin-bottom: 10px;" rel="text-align: center; margin-bottom: 10px;">
               1/4
              </h1>
@@ -320,6 +341,18 @@
                maintenance or update expenses
               </span>
               <span class="type-small">.</span>
+             </p>
+-->
+             <h1 class="type-weight--thin" style="text-align: center; margin-bottom: 10px;" rel="text-align: center; margin-bottom: 10px;">
+              В 10 раз
+             </h1>
+             <h3 style="text-align: center; margin-bottom: 10px;" rel="text-align: center; margin-bottom: 10px;">
+              меньше затрат
+             </h3>
+             <p style="text-align: center;" rel="text-align: center;">
+              <span class="type-small">
+               по сравнению с самостоятельным выводом компании на рынки ЕС
+              </span>
              </p>
             </div>
            </div>
