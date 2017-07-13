@@ -427,12 +427,16 @@
          </div>
         </div>
        </section>
+<!--
        <section id="contentBlock20279" class="block block--paddingBottomSmallScheme block--defaultScheme block--desktopViewport block--paddingTopBottom block-imagePosition--default block--oneColTextImage">
         <div class="block-container">
          <div class="block-container-inner">
          </div>
         </div>
        </section>
+-->
+
+<!--
        <section id="contentBlock20280" class="block block--narrowWidthScheme block--defaultScheme block--allViewport block--paddingTop block--carouselRebrand-style--default block--carouselRebrand">
         <div class="block-container">
          <div class="block-container-inner">
@@ -479,6 +483,153 @@
         </div>
        </div>
       </section>
+-->
+<!--
+       <section id="contentBlock20280" class="block block--defaultScheme block--narrowWidthScheme block--allViewport block--paddingTop block--carouselRebrand-style--default block--carouselRebrand">
+-->
+<!--
+	<section id="contentBlock14690" class="block block--defaultScheme block--paddingBottomSmallScheme block--allViewport block--paddingTopBottom block--twoColAbsolute">
+-->
+<!-- #Original of next section
+	<section id="contentBlock14690" class="block block--defaultScheme block--paddingBottomSmallScheme block--allViewport block--paddingTopBottom block--twoColAbsolute">
+	 <div class="block-container">
+	  <div class="block-container-inner">
+	   <div class="block-text">
+	    <h2 class="marginTop-40" style="text-align: center;">
+	     Optimize your business
+	    </h2>
+	    <p style="text-align: center;" rel="text-align: center;">
+	     <span class="type-large">
+	      We don’t just help you grow revenue; we empower you to reduce <br>
+	      costs and streamline your operations.
+	     </span>
+	    </p>
+	   </div>
+	   <div class="block--twoColAbsolute-row block--twoColAbsolute-row--split6">
+	    <div class="block--twoColAbsolute-column">
+	     <div class="block-image block-image--png">
+	      <img style="right:-915px;bottom:110px;" src="https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/backgrounds/OptimizeYourBusiness_Boxes.png?mtime=20160315102140" alt="OptimizeYourBusiness Boxes">
+	     </div>
+	     <div class="block-text">
+	      <h4 class="marginTop-40">A better way to ship</h4>
+	      <p>
+	       <span class="type-small">
+	        BigCommerce makes it quick and easy to set up powerful shipping options. We <br>
+	        support real-time carrier quotes, free shipping, flat rates, dropshipping, USPS 
+	        label printing and more.<br>
+	        <a href="/features/shipping-and-fulfillment/">More on shipping</a><br>
+	       </span>
+	      </p>
+	      <h4>Analyze and improve</h4>
+	      <p>
+	       <span class="type-small">
+	        BigCommerce Analytics lets you see your most important metrics at a glance, or dig 
+	        deeper to spot trends, remove bottlenecks, improve merchandising and increase 
+	        customer loyalty.<br>
+	        <a href="/features/ecommerce-analytics/">More on BigCommerce Analytics</a><br>
+	       </span>
+	      </p>
+	      <h4>Your choice of payment providers</h4>
+	      <p>
+	       <span class="type-small">
+	        Unlike Shopify, we don’t charge you a fee for using your preferred payment solutions. 
+	        You’ll get access to the best gateways at the best rates, digital wallets like 
+	        Amazon Pay and Apple Pay to boost mobile conversion, and even consumer 
+	        financing options.<br>
+	       </span>
+	       <span class="type-small">
+	        <a href="/features/accept-credit-cards-and-payments/" target="_blank">More on payments</a>
+	       </span>
+	      </p>
+	      <h4>Simplify your multi-channel sales</h4>
+	      <p>
+	       <span class="type-small">
+	        The BigCommerce Channel Manager is the best way to sell on multiple channels. 
+	        It gives you a single place to process all online sales, whether they’re made 
+	        on your site, social media or marketplaces.<br>
+	       </span>
+	       <span class="type-small">
+	        <a href="/multi-channel-ecommerce/" target="_blank">More on Channel Manager</a>
+	       </span>
+	      </p>
+	     </div>
+	    </div>
+	   </div>
+	  </div>
+	 </div>
+	</section>
+-->
+	<section id="contentBlock14690" class="block block--defaultScheme block--paddingBottomSmallScheme block--allViewport block--paddingTopBottom block--twoColAbsolute">
+	 <div class="block-container">
+	  <div class="block-container-inner">
+	   <div class="block-text">
+	    <h2 class="marginTop-40" style="text-align: center;">
+	     Запуск продаж ваших товаров
+	    </h2>
+	    <p style="text-align: center;" rel="text-align: center;">
+	     <span class="type-large">
+	      We don’t just help you grow revenue; we empower you to reduce <br>
+	      costs and streamline your operations.
+	     </span>
+	    </p>
+	   </div>
+	   <div class="block--twoColAbsolute-row block--twoColAbsolute-row--split6">
+	    <div class="block--twoColAbsolute-column">
+	     <div class="block-image block-image--png">
+	      <img style="right:-915px;bottom:110px;" src="https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/backgrounds/OptimizeYourBusiness_Boxes.png?mtime=20160315102140" alt="OptimizeYourBusiness Boxes">
+	     </div>
+	     <div class="block-text">
+	      <h4 class="marginTop-40">Оценка ниши и ценовой политики</h4>
+	      <p>
+	       <span class="type-small">
+	        BigCommerce makes it quick and easy to set up powerful shipping options. We <br>
+	        support real-time carrier quotes, free shipping, flat rates, dropshipping, USPS 
+	        label printing and more.<br>
+	        <a href="/features/shipping-and-fulfillment/">More on shipping</a><br>
+	       </span>
+	      </p>
+	      <h4>Разработка и адаптация интернет-магазинов на рынки стран ЕС</h4>
+	      <p>
+	       <span class="type-small">
+	        Локализация и переводы<br>
+	        SEO оптимизация<br>
+	        Наполнение и поддержка<br>
+	        <a href="/features/ecommerce-analytics/">More on Marketello Analytics</a><br>
+	       </span>
+	      </p>
+	      <h4>Your choice of payment providers</h4>
+	      <p>
+	       <span class="type-small">
+	        Unlike Shopify, we don’t charge you a fee for using your preferred payment solutions. 
+	        You’ll get access to the best gateways at the best rates, digital wallets like 
+	        Amazon Pay and Apple Pay to boost mobile conversion, and even consumer 
+	        financing options.<br>
+	       </span>
+	       <span class="type-small">
+	        <a href="/features/accept-credit-cards-and-payments/" target="_blank">More on payments</a>
+	       </span>
+	      </p>
+	      <h4>Simplify your multi-channel sales</h4>
+	      <p>
+	       <span class="type-small">
+	        The BigCommerce Channel Manager is the best way to sell on multiple channels. 
+	        It gives you a single place to process all online sales, whether they’re made 
+	        on your site, social media or marketplaces.<br>
+	       </span>
+	       <span class="type-small">
+	        <a href="/multi-channel-ecommerce/" target="_blank">More on Channel Manager</a>
+	       </span>
+	      </p>
+	     </div>
+	    </div>
+	   </div>
+	  </div>
+	 </div>
+	</section>
+
+<!-- #inner divs without outer section
+       <div class="block-container"><div class="block-container-inner"><div class="block-text"><h2 class="marginTop-40" style="text-align: center;">Optimize your business</h2><p style="text-align: center;" rel="text-align: center;"><span class="type-large">We don’t just help you grow revenue; we empower you to reduce <br>costs and streamline your operations.</span></p></div><div class="block--twoColAbsolute-row block--twoColAbsolute-row--split6"><div class="block--twoColAbsolute-column"><div class="block-image block-image--png"><img style="right:-915px;bottom:110px;" src="https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/backgrounds/OptimizeYourBusiness_Boxes.png?mtime=20160315102140" alt="OptimizeYourBusiness Boxes"></div><div class="block-text"><h4 class="marginTop-40">A better way to ship</h4><p><span class="type-small">BigCommerce makes it quick and easy to set up powerful shipping options. We <br>support real-time carrier quotes, free shipping, flat rates, dropshipping, USPS label printing and more.<br><a href="/features/shipping-and-fulfillment/">More on shipping</a><br></span></p><h4>Analyze and improve</h4><p><span class="type-small">BigCommerce Analytics lets you see your most important metrics at a glance, or dig deeper to spot trends, remove bottlenecks, improve merchandising and increase customer loyalty.<br><a href="/features/ecommerce-analytics/">More on BigCommerce Analytics</a><br></span></p><h4>Your choice of payment providers</h4><p><span class="type-small">Unlike Shopify, we don’t charge you a fee for using your preferred payment solutions. You’ll get access to the best gateways at the best rates, digital wallets like Amazon Pay and Apple Pay to boost mobile conversion, and even consumer financing options.  <br></span><span class="type-small"><a href="https://www.bigcommerce.com/features/accept-credit-cards-and-payments/" target="_blank">More on payments</a></span></p><h4>Simplify your multi-channel sales</h4><p><span class="type-small">The BigCommerce Channel Manager is the best way to sell on multiple channels. It gives you a single place to process all online sales, whether they’re made on your site, social media or marketplaces.<br></span><span class="type-small"><a href="/multi-channel-ecommerce/" target="_blank">More on Channel Manager</a></span></p></div></div></div></div></div>
+-->
       <section id="contentBlock20283" class="block block--defaultScheme block--allViewport block--paddingBottom block-imagePosition--default block--oneColTextImage">
        <div class="block-container">
         <div class="block-container-inner">
