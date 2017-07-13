@@ -564,7 +564,7 @@
 	  <div class="block-container-inner">
 	   <div class="block-text">
 	    <h2 class="marginTop-40" style="text-align: center;">
-	     Запуск продаж ваших товаров
+	     Запуск продаж ваших товаров<br> в ЕС - включено ВСЁ
 	    </h2>
 	    <p style="text-align: center;" rel="text-align: center;">
 	     <span class="type-large">
@@ -585,41 +585,50 @@
 	        BigCommerce makes it quick and easy to set up powerful shipping options. We <br>
 	        support real-time carrier quotes, free shipping, flat rates, dropshipping, USPS 
 	        label printing and more.<br>
-	        <a href="/features/shipping-and-fulfillment/">More on shipping</a><br>
+	        <a href="/features/shipping-and-fulfillment/">Узнать больше</a><br>
 	       </span>
 	      </p>
 	      <h4>Разработка и адаптация интернет-магазинов на рынки стран ЕС</h4>
 	      <p>
 	       <span class="type-small">
-	        Локализация и переводы<br>
-	        SEO оптимизация<br>
-	        Наполнение и поддержка<br>
-	        <a href="/features/ecommerce-analytics/">More on Marketello Analytics</a><br>
+	        <ul class="type-small">
+	         <li>Локализация и переводы</li>
+	         <li>SEO оптимизация</li>
+	         <li>Наполнение и поддержка</li>
+	         <li>Размещение товаров на маркетплейсах и прайс-агрегаторах
+	        </ul>
+	        <a class="type-small" href="/features/ecommerce-analytics/">More on Marketello Analytics</a><br>
 	       </span>
 	      </p>
-	      <h4>Your choice of payment providers</h4>
+	      <h4>Продвижение</h4>
 	      <p>
 	       <span class="type-small">
-	        Unlike Shopify, we don’t charge you a fee for using your preferred payment solutions. 
-	        You’ll get access to the best gateways at the best rates, digital wallets like 
-	        Amazon Pay and Apple Pay to boost mobile conversion, and even consumer 
-	        financing options.<br>
+	        <ul class="type-small">
+	         <li>SEO продвижение</li>
+	         <li>AdWords + CPA/CPC-трафик</li>
+	         <li>Email-маркетинг</li>
+	         <li>Реклама в соц. сетях</li>
+	        </ul>
 	       </span>
 	       <span class="type-small">
-	        <a href="/features/accept-credit-cards-and-payments/" target="_blank">More on payments</a>
+	        <a href="/features/accept-credit-cards-and-payments/" target="_blank">Узнать больше в "Продвижении"</a>
 	       </span>
 	      </p>
-	      <h4>Simplify your multi-channel sales</h4>
+	      <h4>Операции</h4>
 	      <p>
 	       <span class="type-small">
-	        The BigCommerce Channel Manager is the best way to sell on multiple channels. 
-	        It gives you a single place to process all online sales, whether they’re made 
-	        on your site, social media or marketplaces.<br>
+	        <ul class="type-small">
+	         <li>Клиент-сервис, call-center и обработка заказов на всех европейских языках</li>
+	         <li>Приём платежей и вывод валюты в Украину</li>
+	         <li>Полный цикл логистики от склада производителя до клиента</li>
+	         <li>пост-продажное обслуживание, сервис, возвраты, гарантия</li>
+	        </ul>
 	       </span>
 	       <span class="type-small">
-	        <a href="/multi-channel-ecommerce/" target="_blank">More on Channel Manager</a>
+	        <a href="/multi-channel-ecommerce/" target="_blank">Узнать больше про операции</a>
 	       </span>
 	      </p>
+	      <h4>+ Вывод товаров на Amazon/Ebay</h4>
 	     </div>
 	    </div>
 	   </div>
