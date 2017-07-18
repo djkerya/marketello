@@ -62,8 +62,10 @@
    <ul class="title-area">
     <li class="name">
      <a href="/">
-      <img class="title-area-logo--hover" src="/assets/logos/bc-logo-bright.svg" alt="bc-logo-dark" />
+<!--      <img class="title-area-logo--hover" src="/assets/logos/bc-logo-bright.svg" alt="bc-logo-dark" />
       <img class="title-area-logo" src="/assets/logos/bc-logo-dark.svg" alt="bc-logo-dark" />
+-->
+      <img class="title-area-logo" src="/assets/logos/marketello_logo.png" alt="bc-logo-dark" />
      </a>
     </li>
     <li toggle-top-bar class="menu-icon">
@@ -238,7 +240,10 @@
            <div class="block--twoColAbsolute-row block--twoColAbsolute-row--split7">
             <div class="block--twoColAbsolute-column">
              <div class="block-image block-image--png">
+<!--
               <img style="left:550px;top:-100px;" src="https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/herobanners/home-hero-laquan.png?mtime=20160311101249" alt="home-hero-laquan">
+-->
+              <img style="left:550px;top:-100px;" src="/assets/herobanners2/marketello_main_illustration.png" alt="home-hero-laquan">
              </div>
              <div class="block-text">
 <!--
@@ -564,7 +569,7 @@
 	  <div class="block-container-inner">
 	   <div class="block-text">
 	    <h2 class="marginTop-40" style="text-align: center;">
-	     Запуск продаж ваших товаров<br> в ЕС - включено ВСЁ
+	     Запуск продаж ваших товаров в ЕС &mdash;<br>включено ВСЁ
 	    </h2>
 	    <p style="text-align: center;" rel="text-align: center;">
 	     <span class="type-large">
@@ -582,28 +587,29 @@
 	      <h4 class="marginTop-40">Оценка ниши и ценовой политики</h4>
 	      <p>
 	       <span class="type-small">
-	        BigCommerce makes it quick and easy to set up powerful shipping options. We <br>
-	        support real-time carrier quotes, free shipping, flat rates, dropshipping, USPS 
-	        label printing and more.<br>
+	        <ul>
+	         <li>анализ аналогичных товарных групп на рынках ЕС</li>
+	         <li>рекомендации по розничным ценам</li>
+	        </ul>
 	        <a href="/features/shipping-and-fulfillment/">Узнать больше</a><br>
 	       </span>
 	      </p>
 	      <h4>Разработка и адаптация интернет-магазинов на рынки стран ЕС</h4>
 	      <p>
 	       <span class="type-small">
-	        <ul class="type-small">
+	        <ul>
 	         <li>Локализация и переводы</li>
 	         <li>SEO оптимизация</li>
 	         <li>Наполнение и поддержка</li>
 	         <li>Размещение товаров на маркетплейсах и прайс-агрегаторах
 	        </ul>
-	        <a class="type-small" href="/features/ecommerce-analytics/">More on Marketello Analytics</a><br>
+	        <a href="/features/ecommerce-analytics/">More on Marketello Analytics</a><br>
 	       </span>
 	      </p>
 	      <h4>Продвижение</h4>
 	      <p>
 	       <span class="type-small">
-	        <ul class="type-small">
+	        <ul>
 	         <li>SEO продвижение</li>
 	         <li>AdWords + CPA/CPC-трафик</li>
 	         <li>Email-маркетинг</li>
@@ -617,18 +623,21 @@
 	      <h4>Операции</h4>
 	      <p>
 	       <span class="type-small">
-	        <ul class="type-small">
+	        <ul>
 	         <li>Клиент-сервис, call-center и обработка заказов на всех европейских языках</li>
 	         <li>Приём платежей и вывод валюты в Украину</li>
 	         <li>Полный цикл логистики от склада производителя до клиента</li>
 	         <li>пост-продажное обслуживание, сервис, возвраты, гарантия</li>
 	        </ul>
 	       </span>
-	       <span class="type-small">
+	       <span>
 	        <a href="/multi-channel-ecommerce/" target="_blank">Узнать больше про операции</a>
 	       </span>
 	      </p>
 	      <h4>+ Вывод товаров на Amazon/Ebay</h4>
+	      <p>
+	       <a href="" trial-modal-v2="15-day-free-trial-modal-v2" class="button button--action gtm_trial_start">Выбрать тариф</a>
+	      </p>
 	     </div>
 	    </div>
 	   </div>
@@ -1050,7 +1059,7 @@
 	<!-- //Footer Nav -->
 	<div class="footer-bottom">
 	 <div class="footer-bottom-copyright footer-bottom-copyright--desktop">
-	  <a href="/"><img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo"></a>
+	  <a href="/"><img src="/assets/logos/marketello_logo.png" class="footer-bottom-logo"></a>
 	  <span class="copyright">&copy; Copyright 2016 - <?php echo date("Y"); ?> Marketello LLC 
 	   <a href="/" class="footer-links-link">Ecommerce Platform</a>
 	  </span>
@@ -1113,8 +1122,9 @@ var liveAgentInitParam3 = '00D30000001FDCG';
         plugins: ['BCCOM']
     };
 </script>
-
+<!--
 <script src="/assets/js/vendor-bdf5897b38.js"></script>
+-->
 <script src="/assets/js/bccom-5df12acd2a.js"></script>
 
 <script src="/js/forms2/js/forms2.min.js"></script>
