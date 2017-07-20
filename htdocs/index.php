@@ -673,11 +673,12 @@
 	    с минимальными рисками и затратами выйти на рынки ЕС. Что является стратегической основой для 
 	    процветания украинской экономики
             </span>
-            <cite>Paul Yoo, US Patriot Tactical</cite>
-            </blockquote>
+<!--            <cite>Paul Yoo, US Patriot Tactical</cite>
+-->            </blockquote>
            </div>
           </div>
          </div>
+<!--
          <div class="block--carouselRebrand-slide">
           <div class="block-image block-image--png">
            <img style="right:-500px;bottom:150px;" src="/assets/images/marketello_ban2.png" alt="home-flashtat-beyonce">
@@ -711,6 +712,7 @@
            </div>
           </div>
          </div>
+-->
         </div>
        </div>
       </div>
