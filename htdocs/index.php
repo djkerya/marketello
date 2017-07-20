@@ -1143,26 +1143,26 @@
 	   <h4 class="footer-nav-heading">
 <!--
 	    <a href="/sell/" title="Sell Online" class="footer-links-link ">Sell Online</a>
--->
+
 	    <a href="/contact/" title="Связаться с нами" class="footer-links-link ">Связаться с нами</a>
 	   </h4>
 
 	   <ul class="footer-links">
 	    <li class="footer-links-item">
-<!--
+
 	     <a href="/features/" title="Features" class="footer-links-link ">Features</a>
--->
+
 	     <a href="/about/" title="О сервисе" class="footer-links-link ">О сервисе</a>
 	    </li>
-<!--
+
 	    <li class="footer-links-item">
 	     <a href="/pricing/" title="Pricing" class="footer-links-link ">Pricing</a>
 	    </li>
--->
+
 	    <li class="footer-links-item">
 	     <a href="/oferta/" title="Публичная оферта" class="footer-links-link ">Публичная оферта</a>
 	    </li>
-<!--
+
 	    <li class="footer-links-item">
  	     <a href="/showcase/" title="Ecommerce Stores" class="footer-links-link ">Ecommerce Stores</a>
 	    </li><li class="footer-links-item">
@@ -1206,10 +1206,10 @@
 	   <h4 class="footer-nav-heading">
 <!--
 	    <a href="/resources/" title="Resources" class="footer-links-link">Resources</a>
--->
+
 	    <a href="/school/" title="Школа e-Commerce продаж" class="footer-links-link">Школа e-Commerce продаж</a>
 	   </h4>
-<!--
+
 	   <ul class="footer-links">
 	    <li class="footer-links-item">
 	     <a href="/apps/" title="Apps &amp; Integrations" class="footer-links-link">Apps &amp; Integrations</a>
@@ -1246,10 +1246,10 @@
 	  <h4 class="footer-nav-heading">
 <!--
 	   <a href="/support/" title="Support" target="_blank" class="footer-links-link">Support</a>
--->
+
 	   <a href="/jobs/" title="Вакансии" target="_blank" class="footer-links-link">Вакансии</a>
 	  </h4>
-<!--
+
 	  <ul class="footer-links">
 	   <li class="footer-links-item">
 	    <a href="/forum/" title="Community Forum" target="_blank" class="footer-links-link">Community Forum</a>
@@ -1308,6 +1308,7 @@
 	   <a href="/" class="footer-links-link">Ecommerce Platform</a>
 	  </span>
 	 </div>
+<!--
 	 <div class="footer-bottom-social">
 	  <ul class="footer-links footer-links--horizontal">
 	   <li class="footer-links-item">
@@ -1330,6 +1331,7 @@
 	   </li>
 	  </ul>
 	 </div>
+-->
 	 <div class="footer-bottom-copyright footer-bottom-copyright--mobile">
 	  <span class="copyright">
 	   &copy;Copyright 2016 - <?php echo date("Y"); ?> Marketello LLC Shopping Cart Software
