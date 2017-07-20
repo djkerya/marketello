@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h3>    {{trialModalCtrl.title}}</h3>
+    <a class="modal-close" ng-click='trialModalCtrl.redirect($event)' href="#"></a>
+</div>
+<div class="modal-body">
+        {{trialModalCtrl.message}}
+</div>
+<div class="modal-footer">
+    <a class="button button--small button--primary" ng-click="trialModalCtrl.redirect($event)" href="#">Okay</a>
+</div>

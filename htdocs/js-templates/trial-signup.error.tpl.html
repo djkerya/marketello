@@ -1,0 +1,13 @@
+<a class="modal-close" ng-click='trialModalCtrl.close($event)' href="#"></a>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h3>    {{trialModalCtrl.title}}</h3>
+    </div>
+    <div class="modal-body">
+            {{trialModalCtrl.message}}
+    </div>
+    <div class="modal-footer">
+        <a class="button button--small button--primary" ng-click="trialModalCtrl.close($event)" href="#">Back</a>
+    </div>
+</div>
