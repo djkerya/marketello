@@ -659,7 +659,7 @@
         <div class="slickCarousel">
          <div class="block--carouselRebrand-slide">
           <div class="block-image block-image--png">
-           <img style="right:-500px;bottom:50px;" src="/assets/images/marketello_ban1.png" alt="home-carousel-uspatriot">
+           <img style="right:-500px;bottom:50px;" src="/assets/images/marketello_ban3.png" alt="home-carousel-uspatriot">
           </div>
           <div class="content-container block--carouselRebrand-content--positionleft">
            <div class="block-text">
@@ -698,7 +698,7 @@
          </div>
          <div class="block--carouselRebrand-slide">
           <div class="block-image block-image--png">
-           <img style="right:-550px;bottom:100px;" src="/assets/images/marketello_ban3.png" alt="home-carousel-sisu">
+           <img style="right:-550px;bottom:100px;" src="/assets/images/marketello_ban1.png" alt="home-carousel-sisu">
           </div>
           <div class="content-container block--carouselRebrand-content--positionleft">
            <div class="block-text">
