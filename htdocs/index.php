@@ -278,6 +278,7 @@
          </div>
         </div>
        </section>
+<!-- // original mobile version block
        <section id="contentBlock20270" class="block block--defaultScheme block--mobileViewport block--paddingTop block-imagePosition--default block--oneColTextImage">
         <div class="block-container">
          <div class="block-container-inner">
@@ -294,6 +295,25 @@
          </div>
         </div>
        </section>
+-->
+       <section id="contentBlock20270" class="block block--defaultScheme block--mobileViewport block--paddingTop block-imagePosition--default block--oneColTextImage">
+        <div class="block-container">
+         <div class="block-container-inner">
+          <div class="block-text block-textWidth--full">
+           <h1 class="text-center">Начните продавать свои товары в Евросоюзе уже сейчас</h1>
+           <p class="text-center">
+           Без офиса, регистрации компании, склада и сотрудников.
+           Прямо из Украины. Благодаря Marketello. Всю работу по локализации, продвижению, складированию,
+           доставке, колл-центр и выводу денег мы возьмем на себя.<br><br>
+           </p>
+           <p class="text-center">
+            <a href="" trial-modal-v2="15-day-free-trial-modal-v2" class="button button--action gtm_trial_start">Выбрать тариф</a>
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+
        <section id="contentBlock20271" class="block block--lightestGreyDefaultScheme block--diagonalTopLargeUnderScheme block--desktopViewport block--paddingBottom block--multiColAbsolute block--paddingMobileTopNoneScheme">
         <div class="block-decoration--homeRight">
         </div>
@@ -386,6 +406,7 @@
          </div>
         </div>
        </section>
+<!-- //original mobile version block
        <section id="contentBlock20275" class="block block--lightestGreyDefaultScheme block--mobileViewport block--paddingTopBottom block--multiColTextImage">
         <div class="block-decoration--homeRight">
         </div>
@@ -431,6 +452,58 @@
                <span class="type-small">
                 BigCommerce is a quarter of the cost of on-premise solutions like Magento, 
                 with no hosting, maintenance or update expenses.
+               </span>
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+-->
+       <section id="contentBlock20275" class="block block--lightestGreyDefaultScheme block--mobileViewport block--paddingTopBottom block--multiColTextImage">
+        <div class="block-decoration--homeRight">
+        </div>
+        <div class="block-container">
+         <div class="block-container-inner">
+          <div class="block--multiColTextImage-row block--multiColTextImage-row--columns3">
+           <div class="block--multiColTextImage-column block--multiColTextImage-column--centerImageAlign">
+            <div class="block--multiColTextImage-column-inner">
+             <div class="block-text">
+              <h1 style="text-align: center;">300</h1>
+              <h3 style="text-align: center;" rel="text-align: center;">И более</h3>
+              <p style="text-align: center;" rel="text-align: center;">
+               <span class="type-small">
+		Европейских прайс-аггрегаторов и маркетплейсов на которых мы можем разместить Ваши товары.
+               </span>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="block--multiColTextImage-column block--multiColTextImage-column--centerImageAlign">
+            <div class="block--multiColTextImage-column-inner">
+             <div class="block-text">
+              <h1 style="text-align: center;">256 000 000</h1>
+              <h3 style="text-align: center;" rel="text-align: center;">Потенциальных покупателей</h3>
+              <p style="text-align: center;">
+               <span class="type-small">
+                В 28 странах и список этих стран будет постоянно расширяться.
+               </span>
+               <span class="type-small"></span>
+               <br>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="block--multiColTextImage-column block--multiColTextImage-column--centerImageAlign">
+            <div class="block--multiColTextImage-column-inner">
+             <div class="block-text">
+              <h1 style="text-align: center;" rel="text-align: center;">В 10 раз</h1>
+              <h3 style="text-align: center;" rel="text-align: center;">меньше затрат</h3>
+              <p style="text-align: center;" rel="text-align: center;">
+               <span class="type-small">
+                по сравнению с самостоятельным выводом компании на рынки ЕС
                </span>
               </p>
              </div>
