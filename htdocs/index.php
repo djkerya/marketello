@@ -1269,8 +1269,8 @@
 	 <!--//Footer Column -->
 	 <div class="footer-nav-column">
 	  <h4 class="footer-nav-heading">
-	   <a href="/partners/" title="Партнёрам" class="footer-links-link">Партнёрам</a>
 <!--
+	   <a href="/partners/" title="Партнёрам" class="footer-links-link">Партнёрам</a>
 	   <a href="/about-us/" title="Company" class="footer-links-link">Company</a>
 -->
 	  </h4>
